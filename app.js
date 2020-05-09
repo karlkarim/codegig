@@ -13,7 +13,12 @@ db.authenticate()
 
 const app = express();
 
-app.get('/', (req,res) => res.send('INDEX'));
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req,res) => res.render('index', { layout: 'landing'}));
 
 app.use('/gigs', require('./routes/gigs'))
 
