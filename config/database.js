@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 
-module.exports = new Sequelize('codegig', 'postgres', 'Poltaava',{
+module.exports = new Sequelize('codegig', 'postgres', 'parool',{
     host:'localhost',
     dialect: 'postgres',
     operatorsAliases: false,
